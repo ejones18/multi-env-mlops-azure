@@ -6,9 +6,11 @@ dependencies:
   - python=3.8
   - pip
   - pip:
-      - azureml-mlflow==1.38.0
-      - azureml-sdk==1.38.0
+      - azureml-mlflow
+      - azure-identity
+      - azure-ai-ml
       - scikit-learn==0.24.1
-      - pandas==1.2.1
-      - joblib==1.0.0
-      - matplotlib==3.3.3
+      - pandas
+      - joblib
+      - matplotlib
+      - fastparquet
