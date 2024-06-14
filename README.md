@@ -10,6 +10,15 @@ Essentially, this addition now includes registering and sharing a model to a sha
 
 In a similar vain to the MLOps V2 accelerator, documented [here](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-setup-mlops-azureml?view=azureml-api-2&tabs=azure-shell), you can clone this repository into your ADO project and work through the files to correspond to your environment set-up.
 
+List of requirements:
+* 2 Azure Machine Learning workspaces,
+* An Azure Machine Learning registry,
+* A compute instance per attendee,
+* A shared compute cluster,
+* A service principle with `Contributor` access at the subscription level,
+* An Azure DevOps project,
+* A managed identity with the `Azure ML Registry User` role over the Azure Machine Learning registry as well as the `Contributor` role over both Azure Machine Learning workspaces.
+
 ## Supporting links
 
 * [Pipeline triggers](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/pipeline-triggers?view=azure-devops#configure-pipeline-resource-triggers)
@@ -19,4 +28,5 @@ In a similar vain to the MLOps V2 accelerator, documented [here](https://learn.m
 
 ## Roadmap
 * Improve documentation,
-* Re-trigger training based on model monitoring
+* Re-trigger training based on model monitoring,
+* Verify the most appropriate RBAC roles needed.
