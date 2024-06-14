@@ -4,18 +4,20 @@
 variables:
 - template: ../../config-infra-prod.yml
 - name: endpoint_name
-  value: taxi-online-$(namespace)$(postfix)$(environment)
+  value: taxi-online-<uuid>
 - name: endpoint_type
   value: online
 
-# This sets up the optional triggers for the running the pipeline.
-# Note: This pipeline is triggered by a manual trigger.
-#       This is to avoid running the pipeline when the pipeline is updated.
-#
-#       See the documentation for more information.
-#       https://learn.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops
-trigger:
-- none
+resources:
+  pipelines:
+  - pipeline: <training_pipeline_name>
+    source: <training_pipeline_name>
+    branch: <branch_to_run_this_pipeline_on>
+    project: <project_name>
+    trigger:
+      branches:
+        include:
+          - <branch-to_trigger_from>
 
 # This the image that is used to run the pipeline
 # Note: This is the image that is used to run the pipeline.
