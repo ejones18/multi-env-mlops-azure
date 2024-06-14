@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
 name: blue
 endpoint_name: taxi-fare-online
-model: azureml:taxi-model@latest
+model: azureml://registries/<registry_name_here>/models/<model_name_here>/versions/<version_here>
 instance_type: Standard_DS2_v2
 instance_count: 1
