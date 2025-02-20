@@ -1,6 +1,6 @@
 # Multiple environment MLOps on Azure using Azure DevOps, Azure Machine Learning and Azure Machine Learning Registries
 
-This work-in-progress pull request for the MLOps v2 accelerator looks at incorporating the newly GA Azure Machine Learning registeries to support multi-environment sharing of models, environments and other assets. The current state of the repository is very simple, but the flow can be seen below:
+This work-in-progress fork for the MLOps v2 accelerator looks at incorporating Azure Machine Learning registeries to support multi-environment sharing of models, environments and other assets. The current state of the repository is not too disimiliar from the original repository, but the flow can be seen below:
 
 ![High-level flow](./imgs/multi_env_mlops.png "High-level flow")
 
@@ -15,7 +15,7 @@ List of requirements:
 * An Azure Machine Learning registry,
 * A compute instance per attendee,
 * A shared compute cluster,
-* A service principle with `Contributor` access at the subscription level,
+* A service principle / managed identity with `Contributor` access at the subscription level,
 * An Azure DevOps project,
 * A managed identity with the `Azure ML Registry User` role over the Azure Machine Learning registry as well as the `Contributor` role over both Azure Machine Learning workspaces.
 
@@ -28,5 +28,5 @@ List of requirements:
 
 ## Roadmap
 * Improve documentation,
-* Re-trigger training based on model monitoring,
+* Leverage ADO variable groups,
 * Verify the most appropriate RBAC roles needed.
